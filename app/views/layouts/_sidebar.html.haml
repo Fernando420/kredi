@@ -1,0 +1,48 @@
+%nav#sidebar
+  %div.sidebar-header{align: "center"}
+    %div.sidebar-arrow
+      %div.logo
+        = image_tag(current_user.logo)
+        %h5= current_user.display_name
+        %h2 
+          ID:
+          = current_user.id
+        %h2
+          email:
+          = current_user.email
+
+    %div.col-12.logomenu.nopadding
+      %div.container
+        %ul.list-unstyled.components
+
+          %li.only
+            %a.link-home{href: "/", id: "#Home"}
+              = image_tag "sidebar/home.png", class: 'sidebar-button-img' 
+              %strong.font-weight-bold= t('sidebar.home')
+
+          %li.only{style: "margin-top:10px;"}
+            %a.link-home{href: "/invoices", id: "#Home"}
+              = image_tag "sidebar/movements.png", class: 'sidebar-button-img' 
+              %strong.font-weight-bold= t('sidebar.invoices')
+
+          %li.only{style: "margin-top:10px;"}
+            %a.link-home{href: "/emitters", id: "#Emitters"}
+              = image_tag "sidebar/users.svg", class: 'sidebar-button-img' 
+              %strong.font-weight-bold= t('sidebar.emitters')
+
+          %li.only{style: "margin-top:10px;"}
+            %a.link-home{href: "/receivers", id: "#Receiver"}
+              = image_tag "sidebar/admin_cuentas.svg", class: 'sidebar-button-img' 
+              %strong.font-weight-bold= t('sidebar.receivers')
+
+          %li.only{style: "margin-top:10px;"}
+            %a.link-home{href: "/zip_files", id: "#ZipFiles"}
+              = image_tag "sidebar/reports.png", class: 'sidebar-button-img' 
+              %strong.font-weight-bold= t('sidebar.zip_files')
+
+          %li.only{style: "margin-top:230px;"}
+  
+          %li{style: "margin-top:10px"}
+            = link_to destroy_user_session_path, method: :delete, class: 'sidebar-button font-white', id: 'logout-button' do
+              = image_tag 'sidebar/logout.png', class: 'sidebar-button-img'
+              = t('sidebar.logout')

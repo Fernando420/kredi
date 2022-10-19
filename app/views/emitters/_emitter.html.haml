@@ -1,0 +1,7 @@
+%tr
+  %td= emitter.name
+  %td= emitter.rfc
+  %td
+    %a.link-table{href: "/emitters/#{emitter.id}/edit"}=t('buttons.edit')
+  %td
+    = link_to t('buttons.show'), emitter_path(emitter.id), remote: true, data: { turbo_frame: 'modal' }, class: 'link-table'

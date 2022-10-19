@@ -1,0 +1,11 @@
+%div
+
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th=t('general_text.name')
+    %th=t('general_text.rfc')
+    %th=t('buttons.edit')
+    %th=t('buttons.show')
+  %tbody
+    - if @emitters.any?
+      = render partial: 'emitters/emitter', collection: @emitters

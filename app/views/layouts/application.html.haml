@@ -1,0 +1,22 @@
+%html
+  %head
+    %title Kredi
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"}
+  
+  %body
+    %div.main-container.mx-auto
+      %div.main-grid
+        %nav.container-nav
+          = render partial: 'layouts/sidebar'
+        %div.background-topbar
+          = render partial: 'layouts/topbar'
+          %div#notifications.mt-4
+            = render partial: 'modals/error'
+            = render partial: 'modals/success'
+            = render partial: 'notifications/flash'
+          = yield

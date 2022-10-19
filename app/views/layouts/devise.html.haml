@@ -1,0 +1,18 @@
+%html
+  %head
+    %title Kredi
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' 
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"}
+  
+  %body
+    %div.container
+      %div.authentication
+        %div#notifications.mt-4
+          = render partial: 'notifications/flash'
+        = yield
+    = render partial: '/modals/error'
+    = render partial: '/modals/success'

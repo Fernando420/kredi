@@ -1,0 +1,14 @@
+%div.row
+  %div.card
+    = form_tag create_massive_invoices_path, method: :post, multipart: true, class: "form row" do |f|
+      %div.form-group.col-4
+        = file_field_tag 'file_zip', class: 'form-input', required: true,id:"file_zip",accept: ".zip,.rar,.7zip"
+      
+      %div.links.col-12.row.pt-4
+        %div.links.col-6
+          %a.btn.btn-link{href: "/invoices"}= t('buttons.back')
+        
+        %div.button.col-6
+          %button.btn.btn-primary= t('buttons.save')
+
+#modal

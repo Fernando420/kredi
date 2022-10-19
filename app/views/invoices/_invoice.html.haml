@@ -1,0 +1,15 @@
+%tr
+  %td= invoice.emitter.name
+  %td= invoice.receiver.name
+  %td= invoice.emitted_at.strftime('%Y-%m-%d')
+  %td= (BigDecimal(invoice.amount) * (BigDecimal(1)/BigDecimal(100))).to_s("F")
+  %td= invoice.currency
+  %td= invoice.status
+  %td
+    %a.link-table{href: "/invoices/#{invoice.id}/edit"}=t('buttons.edit')
+  %td
+    = link_to t('buttons.show'), invoice_path(invoice.id), remote: true, data: { turbo_frame: 'modal' }, class: 'link-table'
+  %td
+    = link_to t('buttons.qr'), qr_invoices_path(invoice.id), class: 'link-table', target: '_blank'
+  %td
+    = link_to t('buttons.delete'),"/invoices/#{invoice.id}", method: "delete",class: 'link-table', data: { confirm: "Are you sure?", disable_with: "Processing..." }

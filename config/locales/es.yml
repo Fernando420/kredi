@@ -1,0 +1,28 @@
+es:
+  general_text:
+    list_invoices: 'Lista de Facturas'
+    new_invoices: 'Nuevas Facturas'
+    edit_invoices: 'Editar Facturas'
+    file_in_process: 'Archivo en proceso'
+    create_inovice_success: 'Crear Factura Exitosamente'
+    show_invoices: 'Mostrar Facturas'
+    amount: 'Monto'
+    currency: 'Moneda'
+    emitted_at: 'Fecha de emisión'
+    expires_at: 'Fecha de vencimiento'
+    sign_at: 'Fecha de firma'
+    invoice_uuid: 'UUID de la factura'
+    cfdi_digital_stamp: 'CFDI Digital'
+    emitter_name: 'Nombre emitido'
+    receiver_name: 'Nombre del receptor'
+    state: 'Estado'
+    rfc: 'RFC'
+    name: 'Nombre'
+  sidebar:
+    logout: 'Salir'
+    home: 'Inicio'
+    invoices: 'Facturas'
+  buttons: 
+    show: 'Ver'
+    edit: 'Editar'
+    delete: 'Eliminar'

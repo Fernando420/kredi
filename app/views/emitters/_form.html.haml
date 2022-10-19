@@ -1,0 +1,18 @@
+%div.form-group.col-4
+  %strong#error-name.error-msg
+    = f.text_field :name, class: 'form-input', required: true,id:"name", value: @emitter.name
+    %label.form-label{for: "name"}= t('general_text.name')
+    %p#text-name.hide= t('errors.name')
+
+%div.form-group.col-4
+  %strong#error-rfc.error-msg
+    = f.text_field :rfc, class: 'form-input', required: true,id:"rfc", value: @emitter.rfc
+    %label.form-label{for: "rfc"}= t('general_text.rfc')
+    %p#text-rfc.hide= t('errors.rfc')
+  
+%div.links.col-12.row.pt-4
+  %div.links.col-6
+    %a.btn.btn-link{href: "/emitters"}= t('buttons.back')
+  
+  %div.button.col-6
+    %button.btn.btn-primary= t('buttons.save')

@@ -1,0 +1,19 @@
+- if flash[:alert]
+  :javascript
+    $('#modalSuccess').modal('show');
+
+- if flash[:danger]
+  :javascript
+    $('#modalError').modal('show');
+
+- if flash[:notice]
+  :javascript
+    $('#modalSuccess').modal('show');
+
+- if flash[:successfully]
+  :javascript
+    $('#modalSuccess').modal('show');
+
+- if flash[:warning]
+  :javascript
+    $('#modalError').modal('show');

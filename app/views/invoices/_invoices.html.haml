@@ -1,0 +1,17 @@
+%div
+
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th=t('general_text.emitter_name')
+    %th=t('general_text.receiver_name')
+    %th=t('general_text.emitted_at')
+    %th=t('general_text.amount')
+    %th=t('general_text.currency')
+    %th=t('general_text.status')
+    %th=t('buttons.edit')
+    %th=t('buttons.show')
+    %th=t('buttons.qr')
+    %th=t('buttons.delete')
+  %tbody
+    - if @invoices.any?
+      = render partial: 'invoices/invoice', collection: @invoices

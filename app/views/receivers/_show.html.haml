@@ -1,0 +1,23 @@
+#receiver.animate__animated.animate__backInRight.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-notify.modal-success{:role => "document"}
+    / Content
+    .modal-content
+      / Header
+      .modal-header.bcc-primary.d-flex
+        %div.col-10.text-center
+          %b.p-0.fs-20.text-white= t('general_text.show_receiver')
+        %div.col-2
+          %button.close-modal{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            = image_tag('modals/close.png', width: 35, height: 35)
+      / Body
+      .modal-body
+        %div.row
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.name')}: #{@receiver.name}"
+          
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.rfc')}: #{@receiver.rfc}"
+          
+    / /.Content

@@ -1,0 +1,7 @@
+%tr
+  %td= zip_file.name
+  %td= zip_file.status
+  %td= zip_file.success.count
+  %td= zip_file.failed.count
+  %td
+    = link_to t('buttons.show'), zip_file_path(zip_file.id), remote: true, data: { turbo_frame: 'modal' }, class: 'link-table'

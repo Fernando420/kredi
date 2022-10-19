@@ -1,0 +1,7 @@
+%tr
+  %td= receiver.name
+  %td= receiver.rfc
+  %td
+    %a.link-table{href: "/receivers/#{receiver.id}/edit"}=t('buttons.edit')
+  %td
+    = link_to t('buttons.show'), receiver_path(receiver.id), remote: true, data: { turbo_frame: 'modal' }, class: 'link-table'

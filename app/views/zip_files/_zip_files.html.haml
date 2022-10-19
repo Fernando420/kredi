@@ -1,0 +1,12 @@
+%div
+
+%table.table.responsive.text-center{id: 'table_desing'}
+  %thead
+    %th=t('general_text.name')
+    %th=t('general_text.status')
+    %th=t('general_text.success')
+    %th=t('general_text.failed')
+    %th=t('buttons.show')
+  %tbody
+    - if @zip_files.any?
+      = render partial: 'zip_files/zip_file', collection: @zip_files

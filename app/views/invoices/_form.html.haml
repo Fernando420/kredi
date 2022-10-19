@@ -1,0 +1,57 @@
+%div.form-group.col-4
+  %strong#error-amount.error-msg
+    = f.number_field :amount, class: 'form-input', required: true,id:"amount",step: 0.01, value: (BigDecimal(@invoice.amount.to_i) * (BigDecimal(1)/BigDecimal(100))).to_s("F")
+    %label.form-label{for: "amount"}= t('general_text.amount')
+    %p#text-amount.hide= t('errors.amount')
+
+%div.form-group.col-4
+  %strong#error-currency.error-msg
+    = f.text_field :currency, class: 'form-input', required: true,id:"currency", value: @invoice.currency
+    %label.form-label{for: "currency"}= t('general_text.currency')
+    %p#text-currency.hide= t('errors.currency')
+
+%div.form-group.col-4
+  %strong#error-emitted_at.error-msg
+    = f.date_field :emitted_at, class: 'form-input', required: true,id:"emitted_at", value: (@invoice.emitted_at ? @invoice.emitted_at.strftime('%Y-%m-%d') : Date.current)
+    %label.form-label{for: "emitted_at"}= t('general_text.emitted_at')
+    %p#text-emitted_at.hide= t('errors.emitted_at')
+
+%div.form-group.col-4
+  %strong#error-expires_at.error-msg
+    = f.date_field :expires_at, class: 'form-input', required: true,id:"expires_at", value: (@invoice.expires_at ? @invoice.expires_at.strftime('%Y-%m-%d') : Date.current)
+    %label.form-label{for: "expires_at"}= t('general_text.expires_at')
+    %p#text-expires_at.hide= t('errors.expires_at')
+
+%div.form-group.col-4
+  %strong#error-signed_at.error-msg
+    = f.date_field :signed_at, class: 'form-input', required: true,id:"signed_at", value: (@invoice.signed_at ? @invoice.signed_at.strftime('%Y-%m-%d') : Date.current)
+    %label.form-label{for: "signed_at"}= t('general_text.signed_at')
+    %p#text-signed_at.hide= t('errors.signed_at')
+
+%div.form-group.col-4
+  %strong#error-invoice_uuid.error-msg
+    = f.text_field :invoice_uuid, class: 'form-input', required: true,id:"invoice_uuid", value: @invoice.invoice_uuid
+    %label.form-label{for: "invoice_uuid"}= t('general_text.invoice_uuid')
+    %p#text-invoice_uuid.hide= t('errors.invoice_uuid')
+
+%div.form-group.col-12
+  %strong#error-cfdi_digital_stamp.error-msg
+    = f.text_field :cfdi_digital_stamp, class: 'form-input', required: true,id:"cfdi_digital_stamp", value: @invoice.cfdi_digital_stamp
+    %label.form-label{for: "cfdi_digital_stamp"}= t('general_text.cfdi_digital_stamp')
+    %p#text-cfdi_digital_stamp.hide= t('errors.cfdi_digital_stamp')
+
+%div.form-group-select.col-6
+  = f.select :receiver_id, options_for_select(Receiver.all.map { |receiver| [receiver.name,receiver.id] },selected: @invoice.receiver_id ),{}, {class: 'form-select'}
+
+%div.form-group-select.col-6.mb-2
+  = f.select :emitter_id, options_for_select(Emitter.all.map { |emitter| [emitter.name,emitter.id] },selected: @invoice.emitter_id ),{}, {class: 'form-select'}
+
+%div.form-group-select.col-6
+  = f.select :status, options_for_select([[t('general_text.actived'),'actived'],[t('general_text.inactived'),'inactived']],selected: @invoice.status ),{}, {class: 'form-select'}
+
+%div.links.col-12.row.pt-4
+  %div.links.col-6
+    %a.btn.btn-link{href: "/invoices"}= t('buttons.back')
+  
+  %div.button.col-6
+    %button.btn.btn-primary= t('buttons.save')

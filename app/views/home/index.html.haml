@@ -1,0 +1,12 @@
+%div.container
+  %div.row
+    %div.card 
+      %h5
+        = t('general_text.emitters')
+        = Emitter.all.count
+      %h5
+        = t('general_text.receivers')
+        = Receiver.all.count
+      %h5
+        = t('general_text.invoices')
+        = Invoice.all.count

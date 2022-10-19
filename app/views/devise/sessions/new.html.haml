@@ -1,0 +1,27 @@
+%div.content.blogin
+  %div.subtitle{align: 'center'}
+    %img{src: "https://www.kredi.mx/assets/images/Logo.svg", width: '150', height: '150', alt: ""}
+  
+  %div.title
+    %h1= t('login.title')
+
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form'}) do |f|
+    %div.form-group
+      %strong#error-username.error-msg
+        = f.email_field :email, class: 'form-input', required: true,id:"email"
+        %label.form-label{for: "email"}= t('login.input.email')
+        %p#text-email.hide= t('errors.email')
+
+    %div.form-group
+      %strong#error-password.error-msg
+        = f.password_field :password, class: 'form-input', required: true,id:"password"
+        %label.form-label{for: "password"}= t('register.inputs.password')
+        %p#text-password.hide= t('errors.password')
+
+    %div.row
+      %div.forgot-password
+        -# %a.forgot-password{href: "#{forgot_password_sessions_url}"}= t('login.forgot-password')
+      %div.button
+        %button.btn.btn-login= t('buttons.login')
+
+

@@ -1,0 +1,5 @@
+%div.row
+  %div.card
+    %h1= t('receivers.new_subtitle')
+    = form_for :receiver, :url => { :action => "update"}, method: 'PUT', :html => {:class => "form row"} do |f|
+      = render partial: 'form', locals: {f: f}

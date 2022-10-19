@@ -1,0 +1,4 @@
+%div.row
+  %div.card
+    = form_for :invoice, :url => { :action => "create"}, method: 'POST', :html => {:class => "form row"} do |f|
+      = render partial: 'form', locals: {f: f}

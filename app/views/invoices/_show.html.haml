@@ -1,0 +1,43 @@
+#invoice.animate__animated.animate__backInRight.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "modalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-notify.modal-success{:role => "document"}
+    / Content
+    .modal-content
+      / Header
+      .modal-header.bcc-primary.d-flex
+        %div.col-10.text-center
+          %b.p-0.fs-20.text-white= t('general_text.show_invoice')
+        %div.col-2
+          %button.close-modal{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            = image_tag('modals/close.png', width: 35, height: 35)
+      / Body
+      .modal-body
+        %div.row
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.emitter_name')}: #{@invoice.emitter.name}"
+
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.receiver_name')}: #{@invoice.receiver.name}"
+
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.amount')}: #{@invoice.amount}"
+          
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.currency')}: #{@invoice.currency}"
+
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.emitted_at')}: #{@invoice.emitted_at}"
+
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.expires_at')}: #{@invoice.expires_at}"
+
+          %div.col-6.p-2
+            %h5.font-weight-bold
+              = "#{t('general_text.signed_at')}: #{@invoice.signed_at}"
+          
+    / /.Content

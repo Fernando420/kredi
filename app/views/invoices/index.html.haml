@@ -1,0 +1,12 @@
+%div.container
+  %div.row
+    %div.card
+      %div.col-12.mb-3.row
+        %div.col-6
+          = link_to t('general_text.new_invoices'), new_invoice_path(), class: 'btn btn-primary'
+        %div.col-6.text-right
+          = link_to t('general_text.new_mssive_invoices'), new_massive_invoices_path(), class: 'btn btn-primary'
+      %div.col-12
+        = render partial: 'invoices'
+
+#modal
