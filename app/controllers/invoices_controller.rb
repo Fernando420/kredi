@@ -17,7 +17,6 @@ class InvoicesController < ApplicationController
   end
 
   def qr
-    @title = t('general_text.qr')
     send_data RQRCode::QRCode.new(@invoice.cfdi_digital_stamp).as_png(size: 300), type: 'image/png', disposition: 'attachment'
   end
 
